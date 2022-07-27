@@ -3,8 +3,8 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 const API = process.env.REACT_APP_API_URL;
 
-function transactionDetails() {
-  const [transaction, setTransaction] = useState([]);
+/*function transactionDetails() {
+  const [Transaction, setTransaction] = useState([]);
   let { index } = useParams();
   const navigate = useNavigate();
 
@@ -31,19 +31,19 @@ function transactionDetails() {
   return (
     <tr>
       <td>
-        <h2>Date: {transaction.date}</h2>
+        <h2>Date: {Transaction.date}</h2>
       </td>
       <td>
-        <h2>Name: {transaction.item_name} </h2>
+        <h2>Name: {Transaction.item_name} </h2>
       </td>
       <td>
-        <h2>Amount: {transaction.amount}</h2>
+        <h2>Amount: {Transaction.amount}</h2>
       </td>
       <td>
-        <h2>Source: {transaction.from}</h2>
+        <h2>Source: {Transaction.from}</h2>
       </td>
       <td>
-        <h2>Category: {transaction.category}</h2>
+        <h2>Category: {Transaction.category}</h2>
       </td>
       <div>
         <button onClick={handleDelete}>Delete</button>
@@ -51,4 +51,4 @@ function transactionDetails() {
     </tr>
   );
 }
-export default transactionDetails;
+export default transactionDetails; */

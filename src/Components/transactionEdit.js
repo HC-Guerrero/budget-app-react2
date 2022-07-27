@@ -7,7 +7,7 @@ const API = process.env.REACT_APP_API_URL;
 function transactionEdit() {
   const navigate = useNavigate();
   let { index } = useParams();
-  const [transaction, setTransaction] = useState({
+  const [Transaction, setTransaction] = useState({
     date: '',
     item_name: '',
     amount: 0,
@@ -16,7 +16,7 @@ function transactionEdit() {
   });
 
   const handleTransactionEdit = (event) => {
-    setTransaction({ ...transaction, [event.target.id]: event.target.value });
+    setTransaction({ ...Transaction, [event.target.id]: event.target.value });
   };
 
   useEffect(() => {
@@ -32,7 +32,7 @@ function transactionEdit() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .put(`${API}/transactions/${index}`, transaction)
+      .put(`${API}/transactions/${index}`, Transaction)
       .then(() => {
         navigate(`/transactions/${index}`);
       })
@@ -46,7 +46,7 @@ function transactionEdit() {
         <label htmlFor='date'>Date:</label>
         <input
           id='date'
-          value={transaction.date}
+          value={Transaction.date}
           type='text'
           onChange={handleTransactionEdit}
           placeholder='Date format: MM/DD/YY'
@@ -56,7 +56,7 @@ function transactionEdit() {
         <input
           id='item_name'
           type='text'
-          value={transaction.item_name}
+          value={Transaction.item_name}
           placeholder='Whatwas this transaction for?'
           onChange={handleTransactionEdit}
         />
@@ -64,7 +64,7 @@ function transactionEdit() {
         <input
           id='amount'
           type='Number'
-          value={transaction.value}
+          value={Transaction.value}
           placeholder='How much money was exchanged?'
           onChange={handleTransactionEdit}
           required
@@ -73,7 +73,7 @@ function transactionEdit() {
         <input
           id='from'
           type='text'
-          value={transaction.from}
+          value={Transaction.from}
           placeholder='Who did you make this transaction with?'
           onChange={handleTransactionEdit}
           required
@@ -82,7 +82,7 @@ function transactionEdit() {
         <input
           id='category'
           type='text'
-          value={transaction.category}
+          value={Transaction.category}
           placeholder='How would you categorize this transaction?'
           onChange={handleTransactionEdit}
         />

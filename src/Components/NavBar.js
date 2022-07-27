@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 function NavBar() {
   return (
     <nav>
-      <h1>Hi!</h1>
       <h1>
         <Link to='/transactions'>Current Transaction Records</Link>
       </h1>

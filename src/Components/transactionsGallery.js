@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Transactions from './transactions';
+import Transactions from './transaction';
 const API = process.env.REACT_APP_API_URL;
 
 function TransactionsGallery() {
-  const [transaction, setTransaction] = useState([]);
+  const [Transaction, setTransaction] = useState([]);
   useEffect(() => {
     axios.get(`${API}/transactions`).then((response) => {
       setTransaction(response.data);
@@ -21,7 +21,7 @@ function TransactionsGallery() {
             </tr>
           </thread>
           <tbody>
-            {transaction.map((transaction, index) => {
+            {Transaction.map((transaction, index) => {
               return (
                 <Transactions
                   key={index}

@@ -1,4 +1,4 @@
-import { Link } from 'react-routeer-dom';
+import { Link } from 'react-router-dom';
 function Transaction({ transaction, index }) {
   return (
     <tr>
@@ -6,6 +6,9 @@ function Transaction({ transaction, index }) {
       <td>{transaction.date}</td>
       <td>{transaction.category}</td>
       <td>{transaction.amount}</td>
+      <td>
+        <Link to={`/transactions/${index}`}>*</Link>
+      </td>
     </tr>
   );
 }
