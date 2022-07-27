@@ -3,7 +3,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 const API = process.env.REACT_APP_API_URL;
 
-/*function transactionDetails() {
+function TransactionDetails() {
   const [Transaction, setTransaction] = useState([]);
   let { index } = useParams();
   const navigate = useNavigate();
@@ -14,8 +14,8 @@ const API = process.env.REACT_APP_API_URL;
       .then((response) => {
         setTransaction(response.data);
       })
-      .catch(() => {
-        navigate('/not-found');
+      .catch((error) => {
+        console.warn(error);
       });
   }, []);
   const handleDelete = () => {
@@ -29,26 +29,28 @@ const API = process.env.REACT_APP_API_URL;
       });
   };
   return (
-    <tr>
-      <td>
-        <h2>Date: {Transaction.date}</h2>
-      </td>
-      <td>
-        <h2>Name: {Transaction.item_name} </h2>
-      </td>
-      <td>
-        <h2>Amount: {Transaction.amount}</h2>
-      </td>
-      <td>
-        <h2>Source: {Transaction.from}</h2>
-      </td>
-      <td>
-        <h2>Category: {Transaction.category}</h2>
-      </td>
-      <div>
-        <button onClick={handleDelete}>Delete</button>
-      </div>
-    </tr>
+    <article>
+      <tr>
+        <td>
+          <h2>Date: {Transaction.date}</h2>
+        </td>
+        <td>
+          <h2>Name: {Transaction.item_name} </h2>
+        </td>
+        <td>
+          <h2>Amount: {Transaction.amount}</h2>
+        </td>
+        <td>
+          <h2>Source: {Transaction.from}</h2>
+        </td>
+        <td>
+          <h2>Category: {Transaction.category}</h2>
+        </td>
+        <div>
+          <button onClick={handleDelete}>Delete</button>
+        </div>
+      </tr>
+    </article>
   );
 }
-export default transactionDetails; */
+export default TransactionDetails;

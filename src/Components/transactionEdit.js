@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useParams, Link } from 'react-router-dom';
 const API = process.env.REACT_APP_API_URL;
 
-function transactionEdit() {
+function TransactionEdit() {
   const navigate = useNavigate();
   let { index } = useParams();
   const [Transaction, setTransaction] = useState({
@@ -57,7 +57,7 @@ function transactionEdit() {
           id='item_name'
           type='text'
           value={Transaction.item_name}
-          placeholder='Whatwas this transaction for?'
+          placeholder='What was this transaction for?'
           onChange={handleTransactionEdit}
         />
         <label htmlFor='amount'>Transaction Amount:</label>
@@ -95,4 +95,4 @@ function transactionEdit() {
     </div>
   );
 }
-export default transactionEdit;
+export default TransactionEdit;

@@ -1,9 +1,9 @@
-/*import { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 const API = process.env.REACT_APP_API_URL;
 
-function transactionNew() {
+function TransactionNew() {
   const navigate = useNavigate();
   const [Transaction, setTransaction] = useState({
     date: '',
@@ -80,5 +80,4 @@ function transactionNew() {
     </div>
   );
 }
-export default transactionNew;
- */
+export default TransactionNew;

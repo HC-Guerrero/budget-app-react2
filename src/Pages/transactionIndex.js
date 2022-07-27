@@ -1,9 +1,10 @@
 import TransactionsGallery from '../Components/transactionsGallery';
+import './transactionIndex.css';
 
 function Index() {
   return (
-    <div className='Index'>
-      <h2>Index</h2>
+    <div>
+      <h2 className='Index'>Index</h2>
       <TransactionsGallery />
     </div>
   );

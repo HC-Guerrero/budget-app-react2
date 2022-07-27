@@ -1,0 +1,14 @@
+.Navbar {
+    grid-area: header;
+    display: grid;
+    text-align: center;  
+    grid-auto-flow: column;
+    background: linear-gradient(10deg, gray, white, black);
+    box-shadow: 10px 10px 10px 10px gray;
+}
+.Home{
+text-align: center;
+}
+.NewBtn{
+    background: linear-gradient(-10deg, gray, white);
+}

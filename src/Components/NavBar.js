@@ -1,13 +1,17 @@
 import { Link } from 'react-router-dom';
+import './NavBar.css';
 
 function NavBar() {
   return (
-    <nav>
+    <nav className='Navbar'>
       <h1>
         <Link to='/transactions'>Current Transaction Records</Link>
       </h1>
-      <button>
-        <Link to='/transactions/new'>New Transaction</Link>
+      <button className='NewBtn'>
+        <Link to='/transactions/new'>
+          {' '}
+          <strong>New Transaction </strong>
+        </Link>
       </button>
     </nav>
   );

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Transactions from './transaction';
+import './transactionsGallery.css';
 const API = process.env.REACT_APP_API_URL;
 
 function TransactionsGallery() {
@@ -15,11 +16,11 @@ function TransactionsGallery() {
     <div className='transactionsGallery'>
       <section>
         <table>
-          <thread>
+          <tbody>
             <tr>
-              <th>Transaction Entries</th>
+              <th className='TransactEntries'>Transaction Entries:</th>
             </tr>
-          </thread>
+          </tbody>
           <tbody>
             {Transaction.map((transaction, index) => {
               return (
