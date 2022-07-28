@@ -5,7 +5,7 @@ const API = process.env.REACT_APP_API_URL;
 
 function TransactionNew() {
   const navigate = useNavigate();
-  const [Transaction, setTransaction] = useState({
+  const [transaction, setTransaction] = useState({
     date: '',
     item_name: '',
     amount: 0,
@@ -14,13 +14,13 @@ function TransactionNew() {
   });
 
   const handleTransactionEdit = (event) => {
-    setTransaction({ ...Transaction, [event.target.id]: event.target.value });
+    setTransaction({ ...transaction, [event.target.id]: event.target.value });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post(`${API}/transactions`, Transaction)
+      .post(`${API}/transactions`, transaction)
       .then((response) => {
         navigate('/transactions');
       })
@@ -34,7 +34,7 @@ function TransactionNew() {
         <label htmlFor='date'>Date:</label>
         <input
           id='date'
-          value={Transaction.date}
+          value={transaction.date}
           type='text'
           onChange={handleTransactionEdit}
           placeholder='Date format: MM/DD/YY'
@@ -44,7 +44,7 @@ function TransactionNew() {
         <input
           id='item_name'
           type='text'
-          value={Transaction.item_name}
+          value={transaction.item_name}
           placeholder='What was this transaction for?'
           onChange={handleTransactionEdit}
         />
@@ -52,7 +52,7 @@ function TransactionNew() {
         <input
           id='amount'
           type='Number'
-          value={Transaction.value}
+          value={transaction.value}
           placeholder='How much money was exchanged?'
           onChange={handleTransactionEdit}
           required
@@ -61,7 +61,7 @@ function TransactionNew() {
         <input
           id='from'
           type='text'
-          value={Transaction.from}
+          value={transaction.from}
           placeholder='Who did you make this transaction with?'
           onChange={handleTransactionEdit}
           required
@@ -70,7 +70,7 @@ function TransactionNew() {
         <input
           id='category'
           type='text'
-          value={Transaction.category}
+          value={transaction.category}
           placeholder='How would you categorize this transaction?'
           onChange={handleTransactionEdit}
         />

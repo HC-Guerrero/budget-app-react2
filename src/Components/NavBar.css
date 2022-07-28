@@ -1,3 +1,4 @@
+
 .Navbar {
     grid-area: header;
     display: grid;
@@ -11,4 +12,10 @@ text-align: center;
 }
 .NewBtn{
     background: linear-gradient(-10deg, gray, white);
+ 
+}
+.NewBtn:hover {
+    transform:  scale(1.1) skewX(-40deg);
+    transition-duration: 1.5s;
+    cursor: pointer;
 }

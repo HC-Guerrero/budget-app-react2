@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 const API = process.env.REACT_APP_API_URL;
 
 function TransactionDetails() {
-  const [Transaction, setTransaction] = useState([]);
+  const [transaction, setTransaction] = useState([]);
   let { index } = useParams();
   const navigate = useNavigate();
 
@@ -17,7 +17,8 @@ function TransactionDetails() {
       .catch((error) => {
         console.warn(error);
       });
-  }, []);
+  }, [index, navigate]);
+
   const handleDelete = () => {
     axios
       .delete(`${API}/transactions/${index}`)
@@ -30,26 +31,31 @@ function TransactionDetails() {
   };
   return (
     <article>
-      <tr>
-        <td>
-          <h2>Date: {Transaction.date}</h2>
-        </td>
-        <td>
-          <h2>Name: {Transaction.item_name} </h2>
-        </td>
-        <td>
-          <h2>Amount: {Transaction.amount}</h2>
-        </td>
-        <td>
-          <h2>Source: {Transaction.from}</h2>
-        </td>
-        <td>
-          <h2>Category: {Transaction.category}</h2>
-        </td>
-        <div>
-          <button onClick={handleDelete}>Delete</button>
-        </div>
-      </tr>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <h2>Date: {transaction.date}</h2>
+            </td>
+            <td>
+              <h2>Name: {transaction.item_name} </h2>
+            </td>
+            <td>
+              <h2>Amount: {transaction.amount}</h2>
+            </td>
+            <td>
+              <h2>Source: {transaction.from}</h2>
+            </td>
+            <td>
+              <h2>Category: {transaction.category}</h2>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button onClick={handleDelete}>Delete</button>
+      <Link to={`/transactions/${index}/edit`}>
+        <button>Edit</button>
+      </Link>
     </article>
   );
 }
