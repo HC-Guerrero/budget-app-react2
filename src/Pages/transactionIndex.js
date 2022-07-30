@@ -1,4 +1,4 @@
-import TransactionsGallery from '../Components/TransactionsGallery';
+import TransactionsGallery from '../Components/transactionsGallery';
 import './transactionIndex.css';
 
 function Index() {

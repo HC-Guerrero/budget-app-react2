@@ -1,4 +1,4 @@
-import TransactionNew from '../Components/TransactionNew';
+import TransactionNew from '../Components/transactionNew';
 import './New.css';
 
 function New() {

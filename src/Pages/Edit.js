@@ -1,4 +1,4 @@
-import TransactionEdit from '../Components/TransactionEdit';
+import TransactionEdit from '../Components/transactionEdit';
 import './Edit.css';
 function Edit() {
   return (

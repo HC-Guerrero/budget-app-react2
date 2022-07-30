@@ -6,7 +6,7 @@ import Edit from './Pages/Edit';
 import New from './Pages/New';
 import Error from './Pages/Error';
 
-import NavBar from './Components/NavBar';
+import NavBar from './Components/navBar';
 
 function App() {
   return (
