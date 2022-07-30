@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Pages/Home';
-import Index from './Pages/transactionIndex';
-import Show from './Pages/Show';
-import Edit from './Pages/Edit';
-import New from './Pages/New';
-import Error from './Pages/Error';
+import Home from './pages/Home';
+import Index from './pages/transactionIndex';
+import Show from './pages/Show';
+import Edit from './pages/Edit';
+import New from './pages/New';
+import Error from './pages/Error';
 
-import NavBar from './Components/navBar';
+import NavBar from './components/navBar';
 
 function App() {
   return (
