@@ -1,5 +1,5 @@
 import TransactionEdit from '../components/transactionEdit';
-import './Edit.css';
+import './edit.css';
 function Edit() {
   return (
     <div className='Edit'>

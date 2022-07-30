@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './Transaction.css';
+import './transaction.css';
 function Transactions({ transaction, index }) {
   return (
     <table className='TransacTable'>

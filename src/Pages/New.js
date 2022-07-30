@@ -1,5 +1,5 @@
 import TransactionNew from '../components/transactionNew';
-import './New.css';
+import './new.css';
 
 function New() {
   return (
